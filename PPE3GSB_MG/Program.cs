@@ -16,6 +16,7 @@ namespace PPE3GSB_MG
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Modele.init();
             Application.Run(new Form1());
         }
     }
