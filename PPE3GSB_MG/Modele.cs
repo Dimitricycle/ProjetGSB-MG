@@ -11,6 +11,7 @@ namespace PPE3GSB_MG
     {
         private static connectGSB maConnexion;
         private static bool connexionValide;
+        private static string identite;
 
 
         public static connectGSB MaConnexion { get => maConnexion; set => maConnexion = value; }
@@ -37,7 +38,6 @@ namespace PPE3GSB_MG
                     connexionValide = true;
                 }
             }
-
         }
 
         public static bool ValidationConnexion()
@@ -47,6 +47,7 @@ namespace PPE3GSB_MG
 
         public static Visiteur ListeID(string id)
         {
+            identite = id;
             Visiteur vretour = null;
             var LQuery = MaConnexion.Visiteur.ToList()
                 .Where(x => x.identifiant == id);
@@ -54,8 +55,12 @@ namespace PPE3GSB_MG
             {
                 vretour = (Visiteur)LQuery.ToList()[0];
             }
-            return vretour;
-                
+            return vretour;    
+        }
+
+        public static string Affiche()
+        {
+            return identite;
         }
 
         private static string CryptMDP(string PasswdSaisi)

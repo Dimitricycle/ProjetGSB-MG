@@ -33,5 +33,10 @@ namespace PPE3GSB_MG
         {
             Application.Run(new FMenu());
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -136,6 +136,9 @@
     <Compile Include="Visiteur.cs">
       <DependentUpon>GSB.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FMenu.resx">
+      <DependentUpon>FMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
