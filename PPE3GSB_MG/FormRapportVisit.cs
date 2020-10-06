@@ -16,5 +16,11 @@ namespace PPE3GSB_MG
         {
             InitializeComponent();
         }
+
+        private void FormRapportVisit_Load(object sender, EventArgs e)
+        {
+            bsInformationVisite.DataSource = Modele.ListeRapport();
+            //textBoxRapportVisit.Text = bsInformationVisite;
+        }
     }
 }

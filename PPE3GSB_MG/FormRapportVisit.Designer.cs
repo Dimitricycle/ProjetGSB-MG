@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.labelTitleVisit = new System.Windows.Forms.Label();
             this.textBoxRapportVisit = new System.Windows.Forms.TextBox();
             this.labelNumRapport = new System.Windows.Forms.Label();
@@ -44,7 +45,9 @@
             this.buttonSuivant = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.bsInformationVisite = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsInformationVisite)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTitleVisit
@@ -64,7 +67,6 @@
             this.textBoxRapportVisit.Name = "textBoxRapportVisit";
             this.textBoxRapportVisit.Size = new System.Drawing.Size(121, 20);
             this.textBoxRapportVisit.TabIndex = 1;
-            //this.textBoxRapportVisit.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // labelNumRapport
             // 
@@ -222,7 +224,9 @@
             this.Controls.Add(this.labelTitleVisit);
             this.Name = "FormRapportVisit";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FormRapportVisit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsInformationVisite)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,5 +250,6 @@
         private System.Windows.Forms.Button buttonSuivant;
         private System.Windows.Forms.Button buttonNew;
         private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.BindingSource bsInformationVisite;
     }
 }
