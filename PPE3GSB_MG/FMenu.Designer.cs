@@ -84,9 +84,9 @@
             // 
             // RVisite
             // 
-            this.RVisite.Location = new System.Drawing.Point(279, 291);
+            this.RVisite.Location = new System.Drawing.Point(276, 290);
             this.RVisite.Name = "RVisite";
-            this.RVisite.Size = new System.Drawing.Size(119, 23);
+            this.RVisite.Size = new System.Drawing.Size(122, 23);
             this.RVisite.TabIndex = 7;
             this.RVisite.Text = "Rapport visite";
             this.RVisite.UseVisualStyleBackColor = true;
