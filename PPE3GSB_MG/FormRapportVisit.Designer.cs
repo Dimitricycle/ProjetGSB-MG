@@ -40,14 +40,19 @@
             this.textBoxDateRapport = new System.Windows.Forms.TextBox();
             this.textBoxMotifVisit = new System.Windows.Forms.TextBox();
             this.buttonDetail = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvBilan = new System.Windows.Forms.DataGridView();
             this.buttonPrecedent = new System.Windows.Forms.Button();
             this.buttonSuivant = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.bsInformationVisite = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.bsVisiteur = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.labelEchantillon = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBilan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsInformationVisite)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTitleVisit
@@ -63,6 +68,7 @@
             // 
             // textBoxRapportVisit
             // 
+            this.textBoxRapportVisit.Enabled = false;
             this.textBoxRapportVisit.Location = new System.Drawing.Point(118, 73);
             this.textBoxRapportVisit.Name = "textBoxRapportVisit";
             this.textBoxRapportVisit.Size = new System.Drawing.Size(121, 20);
@@ -149,20 +155,21 @@
             // 
             this.buttonDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDetail.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonDetail.Location = new System.Drawing.Point(247, 99);
+            this.buttonDetail.Location = new System.Drawing.Point(245, 99);
             this.buttonDetail.Name = "buttonDetail";
             this.buttonDetail.Size = new System.Drawing.Size(47, 23);
             this.buttonDetail.TabIndex = 11;
             this.buttonDetail.Text = "Détails";
             this.buttonDetail.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvBilan
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(118, 184);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 12;
+            this.dgvBilan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvBilan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBilan.Location = new System.Drawing.Point(118, 184);
+            this.dgvBilan.Name = "dgvBilan";
+            this.dgvBilan.Size = new System.Drawing.Size(240, 150);
+            this.dgvBilan.TabIndex = 12;
             // 
             // buttonPrecedent
             // 
@@ -200,17 +207,41 @@
             this.buttonClose.TabIndex = 16;
             this.buttonClose.Text = "Fermer";
             this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
+            // 
+            // bsVisiteur
+            // 
+            this.bsVisiteur.CurrentChanged += new System.EventHandler(this.BsVisiteur_CurrentChanged);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(431, 184);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(357, 150);
+            this.dataGridView1.TabIndex = 17;
+            // 
+            // labelEchantillon
+            // 
+            this.labelEchantillon.AutoSize = true;
+            this.labelEchantillon.Location = new System.Drawing.Point(431, 158);
+            this.labelEchantillon.Name = "labelEchantillon";
+            this.labelEchantillon.Size = new System.Drawing.Size(97, 13);
+            this.labelEchantillon.TabIndex = 18;
+            this.labelEchantillon.Text = "Offre d\'échantillons";
             // 
             // FormRapportVisit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelEchantillon);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonNew);
             this.Controls.Add(this.buttonSuivant);
             this.Controls.Add(this.buttonPrecedent);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvBilan);
             this.Controls.Add(this.buttonDetail);
             this.Controls.Add(this.textBoxMotifVisit);
             this.Controls.Add(this.textBoxDateRapport);
@@ -225,8 +256,10 @@
             this.Name = "FormRapportVisit";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormRapportVisit_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBilan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsInformationVisite)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,11 +278,14 @@
         private System.Windows.Forms.TextBox textBoxDateRapport;
         private System.Windows.Forms.TextBox textBoxMotifVisit;
         private System.Windows.Forms.Button buttonDetail;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvBilan;
         private System.Windows.Forms.Button buttonPrecedent;
         private System.Windows.Forms.Button buttonSuivant;
         private System.Windows.Forms.Button buttonNew;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.BindingSource bsInformationVisite;
+        private System.Windows.Forms.BindingSource bsVisiteur;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label labelEchantillon;
     }
 }

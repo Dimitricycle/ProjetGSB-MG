@@ -25,10 +25,10 @@ namespace PPE3GSB_MG
 
         public static List<Visiteur> listeVisiteur()
         {
-            return MaConnexion.Visiteur.ToList();
+            return maConnexion.Visiteur.ToList();
         }
 
-        public static List<RAPPORT> ListeRapport()
+        public static List<RAPPORT> listeRapport()
         {
             return maConnexion.RAPPORT.ToList();
         }
