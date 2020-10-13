@@ -61,6 +61,7 @@ namespace PPE3GSB_MG
         public static string Affiche()
         {
             return identite;
+            //uppercase pour mettre en majuscule
         }
 
         private static string CryptMDP(string PasswdSaisi)

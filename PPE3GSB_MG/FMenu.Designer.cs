@@ -39,16 +39,17 @@
             // 
             // Information
             // 
-            this.Information.Location = new System.Drawing.Point(276, 145);
+            this.Information.Location = new System.Drawing.Point(316, 135);
             this.Information.Name = "Information";
             this.Information.Size = new System.Drawing.Size(122, 23);
             this.Information.TabIndex = 0;
             this.Information.Text = "Information";
             this.Information.UseVisualStyleBackColor = true;
+            this.Information.Click += new System.EventHandler(this.Information_Click);
             // 
             // Responsable
             // 
-            this.Responsable.Location = new System.Drawing.Point(276, 174);
+            this.Responsable.Location = new System.Drawing.Point(316, 164);
             this.Responsable.Name = "Responsable";
             this.Responsable.Size = new System.Drawing.Size(122, 23);
             this.Responsable.TabIndex = 2;
@@ -57,7 +58,7 @@
             // 
             // MDP
             // 
-            this.MDP.Location = new System.Drawing.Point(276, 203);
+            this.MDP.Location = new System.Drawing.Point(316, 193);
             this.MDP.Name = "MDP";
             this.MDP.Size = new System.Drawing.Size(122, 23);
             this.MDP.TabIndex = 3;
@@ -66,7 +67,7 @@
             // 
             // Budget
             // 
-            this.Budget.Location = new System.Drawing.Point(276, 232);
+            this.Budget.Location = new System.Drawing.Point(316, 222);
             this.Budget.Name = "Budget";
             this.Budget.Size = new System.Drawing.Size(122, 23);
             this.Budget.TabIndex = 4;
@@ -75,7 +76,7 @@
             // 
             // LVisiteur
             // 
-            this.LVisiteur.Location = new System.Drawing.Point(276, 261);
+            this.LVisiteur.Location = new System.Drawing.Point(316, 251);
             this.LVisiteur.Name = "LVisiteur";
             this.LVisiteur.Size = new System.Drawing.Size(122, 23);
             this.LVisiteur.TabIndex = 5;
@@ -84,7 +85,7 @@
             // 
             // RVisite
             // 
-            this.RVisite.Location = new System.Drawing.Point(276, 290);
+            this.RVisite.Location = new System.Drawing.Point(316, 280);
             this.RVisite.Name = "RVisite";
             this.RVisite.Size = new System.Drawing.Size(122, 23);
             this.RVisite.TabIndex = 7;

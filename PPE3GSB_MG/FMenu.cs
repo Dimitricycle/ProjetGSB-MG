@@ -24,8 +24,14 @@ namespace PPE3GSB_MG
 
         private void RVisite_Click(object sender, EventArgs e)
         {
-            FormRapportVisit frv = new FormRapportVisit();
-            frv.Show();
+            FormRapportVisit ouverture = new FormRapportVisit();
+            ouverture.Show();
+        }
+
+        private void Information_Click(object sender, EventArgs e)
+        {
+            FInformation ouverture = new FInformation();
+            ouverture.Show();
         }
     }
 }
