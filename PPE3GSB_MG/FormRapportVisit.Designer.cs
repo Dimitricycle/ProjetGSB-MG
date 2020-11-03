@@ -254,6 +254,7 @@
             this.Controls.Add(this.textBoxRapportVisit);
             this.Controls.Add(this.labelTitleVisit);
             this.Name = "FormRapportVisit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormRapportVisit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBilan)).EndInit();

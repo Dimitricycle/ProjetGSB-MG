@@ -29,7 +29,7 @@ namespace PPE3GSB_MG
 
         private void BsVisiteur_CurrentChanged(object sender, EventArgs e)
         {
-            if (close) return;
+            //if (close) return;
 
             bsInformationVisite.DataSource = ((Visiteur)bsVisiteur.Current).RAPPORT.ToList().OrderBy(x => x.bilan);
             dgvBilan.DataSource = bsInformationVisite;
@@ -43,7 +43,7 @@ namespace PPE3GSB_MG
             dgvBilan.Columns["bilan"].HeaderText = "Bilan";
             dgvBilan.Columns["bilan"].DisplayIndex = 0;
 
-            textBoxDateRapport.Text = ((RAPPORT)bsInformationVisite.Current).dateRapport.ToString();
+            textBoxRapportVisit.Text = ((RAPPORT)bsInformationVisite.Current).idRapport.ToString();
 
         }
 
