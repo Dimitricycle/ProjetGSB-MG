@@ -27,16 +27,17 @@ namespace PPE3GSB_MG
                 t.Start();
                 this.Close();
             }
+            else
+            {
+                
+                label1.Text = "L\'identifiant ou le mdp incorrecte";
+                
+            }
         }
 
         public static void ThreadProc()
         {
             Application.Run(new FMenu());
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
