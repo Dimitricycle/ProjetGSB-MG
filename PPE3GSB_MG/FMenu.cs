@@ -19,19 +19,23 @@ namespace PPE3GSB_MG
 
         private void FMenu_Load(object sender, EventArgs e)
         {
-            label1.Text = Modele.Affiche();
+            label1.Text = "Bonjour " + Modele.Affiche();
         }
 
         private void RVisite_Click(object sender, EventArgs e)
         {
-            FormRapportVisit ouverture = new FormRapportVisit();
-            ouverture.Show();
+
         }
 
         private void Information_Click(object sender, EventArgs e)
         {
-            FInformation ouverture = new FInformation();
-            ouverture.Show();
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(OuvertureInfo));
+            t.Start();
+            this.Close();
+        }
+        public static void OuvertureInfo()
+        {
+            Application.Run(new FInformation());
         }
     }
 }

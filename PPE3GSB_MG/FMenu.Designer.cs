@@ -95,16 +95,19 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(362, 60);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(204, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.Size = new System.Drawing.Size(355, 26);
             this.label1.TabIndex = 8;
+            this.label1.Text = "Bonjour Dandre";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.RVisite);
@@ -114,10 +117,10 @@
             this.Controls.Add(this.Responsable);
             this.Controls.Add(this.Information);
             this.Name = "FMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FMenu";
             this.Load += new System.EventHandler(this.FMenu_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

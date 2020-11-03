@@ -48,6 +48,8 @@
             this.BsVisiteur = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
+            this.retourMenu = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.BsVisiteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -174,13 +176,15 @@
             this.button2.TabIndex = 14;
             this.button2.Text = "Valider";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(370, 59);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(360, 51);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 13);
+            this.label8.Size = new System.Drawing.Size(101, 20);
             this.label8.TabIndex = 15;
             this.label8.Text = "Information";
             // 
@@ -205,12 +209,33 @@
             this.label9.TabIndex = 17;
             this.label9.Text = "Responsable de ";
             // 
+            // retourMenu
+            // 
+            this.retourMenu.Location = new System.Drawing.Point(688, 415);
+            this.retourMenu.Name = "retourMenu";
+            this.retourMenu.Size = new System.Drawing.Size(100, 23);
+            this.retourMenu.TabIndex = 18;
+            this.retourMenu.Text = "Retour au menu";
+            this.retourMenu.UseVisualStyleBackColor = true;
+            this.retourMenu.Click += new System.EventHandler(this.RetourMenu_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.Green;
+            this.label10.Location = new System.Drawing.Point(342, 369);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(0, 13);
+            this.label10.TabIndex = 19;
+            // 
             // FInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.retourMenu);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label8);
@@ -230,6 +255,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "FInformation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FInformation";
             this.Load += new System.EventHandler(this.FInformation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BsVisiteur)).EndInit();
@@ -260,5 +286,7 @@
         private System.Windows.Forms.BindingSource BsVisiteur;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button retourMenu;
+        private System.Windows.Forms.Label label10;
     }
 }
