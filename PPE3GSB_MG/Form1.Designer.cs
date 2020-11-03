@@ -32,7 +32,6 @@
             this.idPersonne = new System.Windows.Forms.TextBox();
             this.mdpPersonne = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -73,26 +72,15 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Enabled = false;
-            this.textBox2.ForeColor = System.Drawing.Color.Red;
-            this.textBox2.Location = new System.Drawing.Point(48, 179);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(241, 13);
-            this.textBox2.TabIndex = 4;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(152, 195);
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.label1.Location = new System.Drawing.Point(99, 195);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "label1";
             // 
             // Form1
             // 
@@ -101,7 +89,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(367, 278);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.mdpPersonne);
             this.Controls.Add(this.idPersonne);
@@ -119,7 +106,6 @@
         private System.Windows.Forms.TextBox idPersonne;
         private System.Windows.Forms.TextBox mdpPersonne;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
     }
 }
