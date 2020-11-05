@@ -52,6 +52,7 @@
             this.idPersonne.Name = "idPersonne";
             this.idPersonne.Size = new System.Drawing.Size(100, 20);
             this.idPersonne.TabIndex = 1;
+            this.idPersonne.Text = "dandre";
             // 
             // mdpPersonne
             // 
@@ -59,6 +60,7 @@
             this.mdpPersonne.Name = "mdpPersonne";
             this.mdpPersonne.Size = new System.Drawing.Size(100, 20);
             this.mdpPersonne.TabIndex = 2;
+            this.mdpPersonne.Text = "oppg5";
             this.mdpPersonne.UseSystemPasswordChar = true;
             // 
             // button1

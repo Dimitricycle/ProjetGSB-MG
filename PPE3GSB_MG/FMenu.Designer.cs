@@ -30,7 +30,6 @@
         {
             this.Information = new System.Windows.Forms.Button();
             this.Responsable = new System.Windows.Forms.Button();
-            this.MDP = new System.Windows.Forms.Button();
             this.Budget = new System.Windows.Forms.Button();
             this.LVisiteur = new System.Windows.Forms.Button();
             this.RVisite = new System.Windows.Forms.Button();
@@ -39,7 +38,7 @@
             // 
             // Information
             // 
-            this.Information.Location = new System.Drawing.Point(316, 135);
+            this.Information.Location = new System.Drawing.Point(322, 146);
             this.Information.Name = "Information";
             this.Information.Size = new System.Drawing.Size(122, 23);
             this.Information.TabIndex = 0;
@@ -49,25 +48,16 @@
             // 
             // Responsable
             // 
-            this.Responsable.Location = new System.Drawing.Point(316, 164);
+            this.Responsable.Location = new System.Drawing.Point(322, 175);
             this.Responsable.Name = "Responsable";
             this.Responsable.Size = new System.Drawing.Size(122, 23);
             this.Responsable.TabIndex = 2;
             this.Responsable.Text = "Resposabilités";
             this.Responsable.UseVisualStyleBackColor = true;
             // 
-            // MDP
-            // 
-            this.MDP.Location = new System.Drawing.Point(316, 193);
-            this.MDP.Name = "MDP";
-            this.MDP.Size = new System.Drawing.Size(122, 23);
-            this.MDP.TabIndex = 3;
-            this.MDP.Text = "Mot de passe";
-            this.MDP.UseVisualStyleBackColor = true;
-            // 
             // Budget
             // 
-            this.Budget.Location = new System.Drawing.Point(316, 222);
+            this.Budget.Location = new System.Drawing.Point(322, 204);
             this.Budget.Name = "Budget";
             this.Budget.Size = new System.Drawing.Size(122, 23);
             this.Budget.TabIndex = 4;
@@ -76,7 +66,7 @@
             // 
             // LVisiteur
             // 
-            this.LVisiteur.Location = new System.Drawing.Point(316, 251);
+            this.LVisiteur.Location = new System.Drawing.Point(322, 233);
             this.LVisiteur.Name = "LVisiteur";
             this.LVisiteur.Size = new System.Drawing.Size(122, 23);
             this.LVisiteur.TabIndex = 5;
@@ -85,7 +75,7 @@
             // 
             // RVisite
             // 
-            this.RVisite.Location = new System.Drawing.Point(316, 280);
+            this.RVisite.Location = new System.Drawing.Point(322, 262);
             this.RVisite.Name = "RVisite";
             this.RVisite.Size = new System.Drawing.Size(122, 23);
             this.RVisite.TabIndex = 7;
@@ -113,7 +103,6 @@
             this.Controls.Add(this.RVisite);
             this.Controls.Add(this.LVisiteur);
             this.Controls.Add(this.Budget);
-            this.Controls.Add(this.MDP);
             this.Controls.Add(this.Responsable);
             this.Controls.Add(this.Information);
             this.Name = "FMenu";
@@ -128,7 +117,6 @@
 
         private System.Windows.Forms.Button Information;
         private System.Windows.Forms.Button Responsable;
-        private System.Windows.Forms.Button MDP;
         private System.Windows.Forms.Button Budget;
         private System.Windows.Forms.Button LVisiteur;
         private System.Windows.Forms.Button RVisite;

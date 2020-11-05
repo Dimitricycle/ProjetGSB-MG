@@ -9,6 +9,7 @@ namespace PPE3GSB_MG
 {
     class Modele
     {
+        private static Visiteur utilisateurC;
         private static connectGSB maConnexion;
         private static bool connexionValide;
         private static string identite;
@@ -74,6 +75,20 @@ namespace PPE3GSB_MG
                 sb.Append(hash[i].ToString("x2"));
             }
             return sb.ToString();
+        }
+
+        public static bool EnregistreUser(string nom, string prenom, string rue, string CP, string ville)
+        {
+            bool vRetour = false;
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("erreur de saisie ! \nErreur système :" + ex.Message);
+            }
+            return vRetour;
         }
 
     }

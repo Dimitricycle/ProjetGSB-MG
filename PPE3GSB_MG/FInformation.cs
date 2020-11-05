@@ -29,7 +29,6 @@ namespace PPE3GSB_MG
             textBox3.Text = ((Visiteur)BsVisiteur.Current).rue.ToString();
             textBox4.Text = ((Visiteur)BsVisiteur.Current).cp.ToString();
             textBox5.Text = ((Visiteur)BsVisiteur.Current).ville.ToString();
-            textBox6.Text = ((Visiteur)BsVisiteur.Current).identifiant.ToString();
         }
 
         private void RetourMenu_Click(object sender, EventArgs e)
@@ -45,31 +44,16 @@ namespace PPE3GSB_MG
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            if(textBox1.Text != ((Visiteur)BsVisiteur.Current).nom.ToString())
+            if(Modele.EnregistreUser(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text))
             {
-
+                label10.Text = "Information enregistrées";
             }
-            if(textBox2.Text != ((Visiteur)BsVisiteur.Current).prenom.ToString())
+            else
             {
-
+                label10.Text = "Erreur enregistrement";
             }
-            if(textBox3.Text != ((Visiteur)BsVisiteur.Current).rue.ToString())
-            {
 
-            }
-            if(textBox4.Text != ((Visiteur)BsVisiteur.Current).cp.ToString())
-            {
-
-            }
-            if(textBox5.Text != ((Visiteur)BsVisiteur.Current).ville.ToString())
-            {
-
-            }
-            if(textBox6.Text != ((Visiteur)BsVisiteur.Current).identifiant.ToString())
-            {
-
-            }
-            label10.Text = "Information enregistrées";
+            
 
         }
     }
