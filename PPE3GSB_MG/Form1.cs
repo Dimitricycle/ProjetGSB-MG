@@ -36,7 +36,8 @@ namespace PPE3GSB_MG
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            idPersonne.Text = "dandre";
+            mdpPersonne.Text = "oppg5";
         }
     }
 }

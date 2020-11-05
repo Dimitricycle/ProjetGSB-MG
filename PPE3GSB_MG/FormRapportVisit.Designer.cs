@@ -49,6 +49,7 @@
             this.bsVisiteur = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.labelEchantillon = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBilan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsInformationVisite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).BeginInit();
@@ -230,11 +231,19 @@
             this.labelEchantillon.TabIndex = 18;
             this.labelEchantillon.Text = "Offre d\'échantillons";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(245, 128);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(19, 20);
+            this.dateTimePicker1.TabIndex = 20;
+            // 
             // FormRapportVisit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.labelEchantillon);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonClose);
@@ -288,5 +297,6 @@
         private System.Windows.Forms.BindingSource bsVisiteur;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label labelEchantillon;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
