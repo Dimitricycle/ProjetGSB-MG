@@ -38,7 +38,13 @@
         <AssociationConnector Association="mdlGSB.FK_SECTEUR" ManuallyRouted="false" />
         <AssociationConnector Association="mdlGSB.FK_VISITEUR" ManuallyRouted="false" />
         <AssociationConnector Association="mdlGSB.FK_VISITEURSECTEUR" ManuallyRouted="false" />
-        <AssociationConnector Association="mdlGSB.Travailler" ManuallyRouted="false" />
+        <AssociationConnector Association="mdlGSB.Travailler" ManuallyRouted="true" >
+          <ConnectorPoint PointX="7.6875" PointY="12.875" />
+          <ConnectorPoint PointX="7.6875" PointY="7.4375" />
+          <ConnectorPoint PointX="5.677083333333333" PointY="7.4374999999999991" />
+          <ConnectorPoint PointX="5.510416666666667" PointY="7.4375" />
+          <ConnectorPoint PointX="4.5" PointY="7.4375" />
+        </AssociationConnector>
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

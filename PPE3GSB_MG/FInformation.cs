@@ -24,6 +24,19 @@ namespace PPE3GSB_MG
 
         private void BsVisiteur_CurrentChanged(object sender, EventArgs e)
         {
+            bsRes.DataSource = ((Visiteur)BsVisiteur.Current).Region1.ToList();
+            dgvRes.DataSource = bsRes;
+            for (int i = 0; i < dgvRes.ColumnCount; i++)
+            {
+                dgvRes.Columns[i].Visible = false;
+            }
+            dgvRes.Columns["idRegion"].Visible = true;
+            dgvRes.Columns["idRegion"].HeaderText = "Numero";
+            dgvRes.Columns["idRegion"].DisplayIndex = 0;
+            dgvRes.Columns["libRegion"].Visible = true;
+            dgvRes.Columns["libRegion"].HeaderText = "Region";
+            dgvRes.Columns["libRegion"].DisplayIndex = 0;
+
             textBox1.Text = ((Visiteur)BsVisiteur.Current).nom.ToString();
             textBox2.Text = ((Visiteur)BsVisiteur.Current).prenom.ToString();
             textBox3.Text = ((Visiteur)BsVisiteur.Current).rue.ToString();
@@ -58,6 +71,11 @@ namespace PPE3GSB_MG
         {
             FModifMDP ouverture = new FModifMDP();
             ouverture.Show();
+        }
+
+        private void BsRes_CurrentChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

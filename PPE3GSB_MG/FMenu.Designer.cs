@@ -34,6 +34,7 @@
             this.LVisiteur = new System.Windows.Forms.Button();
             this.RVisite = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Information
@@ -54,6 +55,7 @@
             this.Responsable.TabIndex = 2;
             this.Responsable.Text = "Resposabilités";
             this.Responsable.UseVisualStyleBackColor = true;
+            this.Responsable.Click += new System.EventHandler(this.Responsable_Click);
             // 
             // Budget
             // 
@@ -93,12 +95,23 @@
             this.label1.Text = "Bonjour Dandre";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(713, 415);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Quitter";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // FMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.RVisite);
             this.Controls.Add(this.LVisiteur);
@@ -121,5 +134,6 @@
         private System.Windows.Forms.Button LVisiteur;
         private System.Windows.Forms.Button RVisite;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

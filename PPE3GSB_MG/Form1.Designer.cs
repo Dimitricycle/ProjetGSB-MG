@@ -40,15 +40,16 @@
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(134, 64);
+            this.textBox1.Location = new System.Drawing.Point(132, 58);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 13);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Identifier-vous";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // idPersonne
             // 
-            this.idPersonne.Location = new System.Drawing.Point(119, 83);
+            this.idPersonne.Location = new System.Drawing.Point(132, 86);
             this.idPersonne.Name = "idPersonne";
             this.idPersonne.Size = new System.Drawing.Size(100, 20);
             this.idPersonne.TabIndex = 1;
@@ -56,7 +57,7 @@
             // 
             // mdpPersonne
             // 
-            this.mdpPersonne.Location = new System.Drawing.Point(119, 109);
+            this.mdpPersonne.Location = new System.Drawing.Point(132, 112);
             this.mdpPersonne.Name = "mdpPersonne";
             this.mdpPersonne.Size = new System.Drawing.Size(100, 20);
             this.mdpPersonne.TabIndex = 2;
@@ -66,7 +67,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.Location = new System.Drawing.Point(134, 150);
+            this.button1.Location = new System.Drawing.Point(142, 164);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
@@ -79,7 +80,7 @@
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label1.Location = new System.Drawing.Point(99, 195);
+            this.label1.Location = new System.Drawing.Point(112, 198);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 5;

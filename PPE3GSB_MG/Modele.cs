@@ -86,7 +86,6 @@ namespace PPE3GSB_MG
                 uti.cp = CP;
                 uti.ville = ville;
                 maConnexion.SaveChanges();
-
             }
             catch (Exception ex)
             {
@@ -101,8 +100,17 @@ namespace PPE3GSB_MG
             bool vRetour = true;
             try
             {
-
-                maConnexion.SaveChanges();
+                string mdp1 = CryptMDP(nMDP);
+                string mdp2 = CryptMDP(confirmation);
+                if(mdp1==mdp2)
+                {
+                    uti.password = mdp2;
+                    maConnexion.SaveChanges();
+                }
+                else
+                {
+                    vRetour = false;
+                }
 
             }
             catch (Exception ex)

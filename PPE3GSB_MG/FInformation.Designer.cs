@@ -44,12 +44,14 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.BsVisiteur = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.retourMenu = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.dgvRes = new System.Windows.Forms.DataGridView();
+            this.bsRes = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.BsVisiteur)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRes)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -175,14 +177,6 @@
             // 
             this.BsVisiteur.CurrentChanged += new System.EventHandler(this.BsVisiteur_CurrentChanged);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(465, 125);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 157);
-            this.dataGridView1.TabIndex = 16;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -211,16 +205,28 @@
             this.label10.Size = new System.Drawing.Size(0, 13);
             this.label10.TabIndex = 19;
             // 
+            // dgvRes
+            // 
+            this.dgvRes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRes.Location = new System.Drawing.Point(465, 125);
+            this.dgvRes.Name = "dgvRes";
+            this.dgvRes.Size = new System.Drawing.Size(259, 162);
+            this.dgvRes.TabIndex = 20;
+            // 
+            // bsRes
+            // 
+            this.bsRes.CurrentChanged += new System.EventHandler(this.BsRes_CurrentChanged);
+            // 
             // FInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvRes);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.retourMenu);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -240,7 +246,8 @@
             this.Text = "FInformation";
             this.Load += new System.EventHandler(this.FInformation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BsVisiteur)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,9 +270,10 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.BindingSource BsVisiteur;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button retourMenu;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridView dgvRes;
+        private System.Windows.Forms.BindingSource bsRes;
     }
 }

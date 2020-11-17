@@ -27,7 +27,7 @@ namespace PPE3GSB_MG
             
             if (Modele.EnregistreMDP(textBox1.Text, textBox2.Text))
             {
-                label4.Text = "Information enregistrées";
+                this.Close();
             }
             else
             {
