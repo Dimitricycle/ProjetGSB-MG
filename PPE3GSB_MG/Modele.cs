@@ -9,10 +9,9 @@ namespace PPE3GSB_MG
 {
     class Modele
     {
-        private static Visiteur utilisateurC;
+        private static Visiteur uti;
         private static connectGSB maConnexion;
         private static bool connexionValide;
-        private static string identite;
 
 
         public static connectGSB MaConnexion { get => maConnexion; set => maConnexion = value; }
@@ -31,10 +30,10 @@ namespace PPE3GSB_MG
 
         public static void Connexion(string id, string mdp)
         {
-            Visiteur vi = ListeID(id);
-            if(vi != null)
+            uti = ListeID(id);
+            if(uti != null)
             {
-                if(CryptMDP(mdp)==vi.password)
+                if(CryptMDP(mdp)==uti.password)
                 {
                     connexionValide = true;
                 }
@@ -48,7 +47,6 @@ namespace PPE3GSB_MG
 
         public static Visiteur ListeID(string id)
         {
-            identite = id;
             Visiteur vretour = null;
             var LQuery = MaConnexion.Visiteur.ToList()
                 .Where(x => x.identifiant == id);
@@ -59,9 +57,9 @@ namespace PPE3GSB_MG
             return vretour;    
         }
 
-        public static string Affiche()
+        public static Visiteur GetAffiche()
         {
-            return identite;
+            return uti;
             //uppercase pour mettre en majuscule
         }
 
@@ -79,17 +77,40 @@ namespace PPE3GSB_MG
 
         public static bool EnregistreUser(string nom, string prenom, string rue, string CP, string ville)
         {
-            bool vRetour = false;
+            bool vRetour = true;
             try
             {
+                uti.nom = nom;
+                uti.prenom = prenom;
+                uti.rue = rue;
+                uti.cp = CP;
+                uti.ville = ville;
+                maConnexion.SaveChanges();
 
             }
             catch (Exception ex)
             {
                 Console.WriteLine("erreur de saisie ! \nErreur système :" + ex.Message);
+                vRetour = false;
             }
             return vRetour;
         }
 
+        public static bool EnregistreMDP(string nMDP, string confirmation)
+        {
+            bool vRetour = true;
+            try
+            {
+
+                maConnexion.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("erreur de saisie ! \nErreur système :" + ex.Message);
+                vRetour = false;
+            }
+            return vRetour;
+        }
     }
 }

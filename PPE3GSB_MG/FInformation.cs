@@ -19,7 +19,7 @@ namespace PPE3GSB_MG
 
         private void FInformation_Load(object sender, EventArgs e)
         {
-            BsVisiteur.DataSource = Modele.listeVisiteur().Where(x => x.identifiant == Modele.Affiche());
+            BsVisiteur.DataSource = Modele.GetAffiche();
         }
 
         private void BsVisiteur_CurrentChanged(object sender, EventArgs e)
@@ -52,9 +52,12 @@ namespace PPE3GSB_MG
             {
                 label10.Text = "Erreur enregistrement";
             }
+        }
 
-            
-
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            FModifMDP ouverture = new FModifMDP();
+            ouverture.Show();
         }
     }
 }

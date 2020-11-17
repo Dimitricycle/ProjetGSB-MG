@@ -19,7 +19,7 @@ namespace PPE3GSB_MG
 
         private void FMenu_Load(object sender, EventArgs e)
         {
-            label1.Text = "Bonjour " + Modele.Affiche();
+            label1.Text = "Bonjour " + Modele.GetAffiche().prenom;
         }
 
         private void RVisite_Click(object sender, EventArgs e)
