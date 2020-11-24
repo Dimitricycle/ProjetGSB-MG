@@ -20,36 +20,50 @@ namespace PPE3GSB_MG
 
         private void FormRapportVisit_Load(object sender, EventArgs e)
         {
-            comboBoxPraticien.ValueMember = "idVisiteur";
+            comboBoxPraticien.ValueMember = "idMedecin";
             comboBoxPraticien.DisplayMember = "prenom";
+            textBoxDateRapport.Text = Convert.ToString(dateTimePickerRapport.Value.Date.ToString("dd/MM/yyyy"));
+            bsMedecin.DataSource = Modele.listeMedecin();
             bsVisiteur.DataSource = Modele.listeVisiteur();
             bsInformationVisite.DataSource = Modele.listeRapport();
-            comboBoxPraticien.DataSource = bsVisiteur;
+            comboBoxPraticien.DataSource = bsMedecin;
         }
 
-        private void BsVisiteur_CurrentChanged(object sender, EventArgs e)
+        private void BsMedecin_CurrentChanged(object sender, EventArgs e)
         {
             //if (close) return;
 
-            bsInformationVisite.DataSource = ((Visiteur)bsVisiteur.Current).RAPPORT.ToList().OrderBy(x => x.bilan);
+           
+            bsInformationVisite.DataSource = ((MEDECIN)bsMedecin.Current).RAPPORT.ToList();
             dgvBilan.DataSource = bsInformationVisite;
 
             for (int i = 0; i < dgvBilan.ColumnCount; i++)
             {
                 dgvBilan.Columns[i].Visible = false;
             }
-           
+
             dgvBilan.Columns["bilan"].Visible = true;
             dgvBilan.Columns["bilan"].HeaderText = "Bilan";
             dgvBilan.Columns["bilan"].DisplayIndex = 0;
+            dgvBilan.Columns["dateRapport"].Visible = true;
+            dgvBilan.Columns["dateRapport"].HeaderText = "Date";
+            dgvBilan.Columns["dateRapport"].DisplayIndex = 1;
 
             textBoxRapportVisit.Text = ((RAPPORT)bsInformationVisite.Current).idRapport.ToString();
+        }
+
+        private void DateTimePickerRapport_ValueChanged(object sender, EventArgs e)
+        {
+          
+            textBoxDateRapport.Text = Convert.ToString(dateTimePickerRapport.Value.Date.ToString("dd/MM/yyyy"));
 
         }
+
 
         private void ButtonClose_Click(object sender, EventArgs e)
         {
             FormRapportVisit.ActiveForm.Close();
         }
+
     }
 }

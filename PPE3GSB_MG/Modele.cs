@@ -33,6 +33,11 @@ namespace PPE3GSB_MG
             return maConnexion.RAPPORT.ToList();
         }
 
+        public static List<MEDECIN> listeMedecin()
+        {
+            return maConnexion.MEDECIN.ToList();
+        }
+
         public static void Connexion(string id, string mdp)
         {
             Visiteur vi = ListeID(id);

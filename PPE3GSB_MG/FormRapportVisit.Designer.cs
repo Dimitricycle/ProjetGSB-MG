@@ -46,14 +46,16 @@
             this.buttonNew = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.bsInformationVisite = new System.Windows.Forms.BindingSource(this.components);
-            this.bsVisiteur = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.labelEchantillon = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerRapport = new System.Windows.Forms.DateTimePicker();
+            this.bsMedecin = new System.Windows.Forms.BindingSource(this.components);
+            this.bsVisiteur = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBilan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsInformationVisite)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMedecin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTitleVisit
@@ -210,14 +212,10 @@
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
-            // bsVisiteur
-            // 
-            this.bsVisiteur.CurrentChanged += new System.EventHandler(this.BsVisiteur_CurrentChanged);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(431, 184);
+            this.dataGridView1.Location = new System.Drawing.Point(420, 184);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(357, 150);
             this.dataGridView1.TabIndex = 17;
@@ -225,25 +223,31 @@
             // labelEchantillon
             // 
             this.labelEchantillon.AutoSize = true;
-            this.labelEchantillon.Location = new System.Drawing.Point(431, 158);
+            this.labelEchantillon.Location = new System.Drawing.Point(417, 163);
             this.labelEchantillon.Name = "labelEchantillon";
             this.labelEchantillon.Size = new System.Drawing.Size(97, 13);
             this.labelEchantillon.TabIndex = 18;
             this.labelEchantillon.Text = "Offre d\'échantillons";
             // 
-            // dateTimePicker1
+            // dateTimePickerRapport
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(245, 128);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(19, 20);
-            this.dateTimePicker1.TabIndex = 20;
+            this.dateTimePickerRapport.CustomFormat = "";
+            this.dateTimePickerRapport.Location = new System.Drawing.Point(245, 129);
+            this.dateTimePickerRapport.Name = "dateTimePickerRapport";
+            this.dateTimePickerRapport.Size = new System.Drawing.Size(18, 20);
+            this.dateTimePickerRapport.TabIndex = 20;
+            this.dateTimePickerRapport.ValueChanged += new System.EventHandler(this.DateTimePickerRapport_ValueChanged);
+            // 
+            // bsMedecin
+            // 
+            this.bsMedecin.CurrentChanged += new System.EventHandler(this.BsMedecin_CurrentChanged);
             // 
             // FormRapportVisit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateTimePickerRapport);
             this.Controls.Add(this.labelEchantillon);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonClose);
@@ -268,8 +272,9 @@
             this.Load += new System.EventHandler(this.FormRapportVisit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBilan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsInformationVisite)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMedecin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,9 +299,10 @@
         private System.Windows.Forms.Button buttonNew;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.BindingSource bsInformationVisite;
-        private System.Windows.Forms.BindingSource bsVisiteur;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label labelEchantillon;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerRapport;
+        private System.Windows.Forms.BindingSource bsMedecin;
+        private System.Windows.Forms.BindingSource bsVisiteur;
     }
 }
