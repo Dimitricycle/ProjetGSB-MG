@@ -39,5 +39,10 @@ namespace PPE3GSB_MG
         {
             Application.Run(new FMenu());
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

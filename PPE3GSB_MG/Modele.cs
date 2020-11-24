@@ -28,6 +28,11 @@ namespace PPE3GSB_MG
             return MaConnexion.Visiteur.ToList();
         }
 
+        public static List<Region> listeRegion()
+        {
+            return MaConnexion.Region.ToList();
+        }
+
         public static void Connexion(string id, string mdp)
         {
             uti = ListeID(id);

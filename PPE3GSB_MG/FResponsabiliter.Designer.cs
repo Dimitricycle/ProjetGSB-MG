@@ -30,19 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvRegion = new System.Windows.Forms.DataGridView();
-            this.dgvSecteur = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.bsRegion = new System.Windows.Forms.BindingSource(this.components);
-            this.bsSecteur = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.bsGlobal = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRegion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSecteur)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsRegion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsSecteur)).BeginInit();
+            this.dgvSouR = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.bsDGV = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bsGlobal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSouR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -54,40 +49,6 @@
             this.label1.Size = new System.Drawing.Size(225, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Voici vos responssabilitées";
-            // 
-            // dgvRegion
-            // 
-            this.dgvRegion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRegion.Location = new System.Drawing.Point(63, 154);
-            this.dgvRegion.Name = "dgvRegion";
-            this.dgvRegion.Size = new System.Drawing.Size(278, 176);
-            this.dgvRegion.TabIndex = 1;
-            // 
-            // dgvSecteur
-            // 
-            this.dgvSecteur.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSecteur.Location = new System.Drawing.Point(471, 154);
-            this.dgvSecteur.Name = "dgvSecteur";
-            this.dgvSecteur.Size = new System.Drawing.Size(278, 176);
-            this.dgvSecteur.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(63, 135);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Vos regions :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(468, 135);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Vos secteurs :";
             // 
             // button1
             // 
@@ -103,27 +64,39 @@
             // 
             this.bsGlobal.CurrentChanged += new System.EventHandler(this.BsGlobal_CurrentChanged);
             // 
+            // dgvSouR
+            // 
+            this.dgvSouR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSouR.Location = new System.Drawing.Point(172, 128);
+            this.dgvSouR.Name = "dgvSouR";
+            this.dgvSouR.Size = new System.Drawing.Size(445, 223);
+            this.dgvSouR.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(172, 109);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 7;
+            // 
             // FResponsabiliter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dgvSecteur);
-            this.Controls.Add(this.dgvRegion);
+            this.Controls.Add(this.dgvSouR);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Name = "FResponsabiliter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FResponsabiliter";
             this.Load += new System.EventHandler(this.FResponsabiliter_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRegion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSecteur)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsRegion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsSecteur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsGlobal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSouR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,13 +105,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvRegion;
-        private System.Windows.Forms.DataGridView dgvSecteur;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.BindingSource bsRegion;
-        private System.Windows.Forms.BindingSource bsSecteur;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource bsGlobal;
+        private System.Windows.Forms.DataGridView dgvSouR;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.BindingSource bsDGV;
     }
 }

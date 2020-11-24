@@ -20,10 +20,12 @@ namespace PPE3GSB_MG
         private void FInformation_Load(object sender, EventArgs e)
         {
             BsVisiteur.DataSource = Modele.GetAffiche();
+
         }
 
         private void BsVisiteur_CurrentChanged(object sender, EventArgs e)
         {
+            
             bsRes.DataSource = ((Visiteur)BsVisiteur.Current).Region1.ToList();
             dgvRes.DataSource = bsRes;
             for (int i = 0; i < dgvRes.ColumnCount; i++)
@@ -43,7 +45,7 @@ namespace PPE3GSB_MG
             textBox4.Text = ((Visiteur)BsVisiteur.Current).cp.ToString();
             textBox5.Text = ((Visiteur)BsVisiteur.Current).ville.ToString();
         }
-
+        
         private void RetourMenu_Click(object sender, EventArgs e)
         {
             System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(OuvertureMenu));

@@ -24,32 +24,51 @@ namespace PPE3GSB_MG
 
         private void BsGlobal_CurrentChanged(object sender, EventArgs e)
         {
-            bsRegion.DataSource = ((Visiteur)bsGlobal.Current).Region.ToList();
-            dgvRegion.DataSource = bsRegion;
-            for (int i = 0; i < dgvRegion.ColumnCount; i++)
+            bool dgv = false;
+            foreach(Region r in Modele.listeRegion())
             {
-                dgvRegion.Columns[i].Visible = false;
+                if(r.idVisiteur== ((Visiteur)bsGlobal.Current).idVisiteur.ToString())
+                {
+                    dgv = true;
+                }
             }
-            dgvRegion.Columns["libRegion"].Visible = true;
-            dgvRegion.Columns["libRegion"].HeaderText = "Region";
-            dgvRegion.Columns["libRegion"].DisplayIndex = 0;
-            dgvRegion.Columns["idRegion"].Visible = true;
-            dgvRegion.Columns["idRegion"].HeaderText = "Numero";
-            dgvRegion.Columns["idRegion"].DisplayIndex = 0;
 
-            bsSecteur.DataSource = ((Visiteur)bsGlobal.Current).Secteur.ToList();
-            dgvSecteur.DataSource = bsSecteur;
-            for (int i = 0; i < dgvSecteur.ColumnCount; i++)
+            if (dgv)
             {
-                dgvRegion.Columns[i].Visible = false;
+                label2.Text = "Vos Regions :";
+                bsDGV.DataSource = (((Visiteur)bsGlobal.Current).Region.ToList());
+                dgvSouR.DataSource = bsDGV;
+                for (int i = 0; i < dgvSouR.ColumnCount; i++)
+                {
+                    dgvSouR.Columns[i].Visible = false;
+                }
+                dgvSouR.Columns["idRegion"].Visible = true;
+                dgvSouR.Columns["idRegion"].HeaderText = "Numero";
+                dgvSouR.Columns["idRegion"].DisplayIndex = 0;
+                dgvSouR.Columns["libRegion"].Visible = true;
+                dgvSouR.Columns["libRegion"].HeaderText = "Region";
+                dgvSouR.Columns["libRegion"].DisplayIndex = 0;
             }
-            dgvSecteur.Columns["idSecteur"].Visible = true;
-            dgvSecteur.Columns["idSecteur"].HeaderText = "Numero";
-            dgvSecteur.Columns["idSecteur"].DisplayIndex = 0;
-            dgvSecteur.Columns["libSecteur"].Visible = true;
-            dgvSecteur.Columns["libSecteur"].HeaderText = "Region";
-            dgvSecteur.Columns["libSecteur"].DisplayIndex = 0;
+            else
+            {
+                label2.Text = "Vos Secteurs :";
+                bsDGV.DataSource = ((Visiteur)bsGlobal.Current).Secteur.ToList();
+                dgvSouR.DataSource = bsDGV;
+                for (int i = 0; i < dgvSouR.ColumnCount; i++)
+                {
+                    dgvSouR.Columns[i].Visible = false;
+                }
+                dgvSouR.Columns["idSecteur"].Visible = true;
+                dgvSouR.Columns["idSecteur"].HeaderText = "Numero";
+                dgvSouR.Columns["idSecteur"].DisplayIndex = 0;
+                dgvSouR.Columns["libSecteur"].Visible = true;
+                dgvSouR.Columns["libSecteur"].HeaderText = "Secteur";
+                dgvSouR.Columns["libSecteur"].DisplayIndex = 0;
+            }
         }
+
+
+
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -62,7 +81,7 @@ namespace PPE3GSB_MG
             Application.Run(new FMenu());
         }
 
-
+        
     }
     
 }
