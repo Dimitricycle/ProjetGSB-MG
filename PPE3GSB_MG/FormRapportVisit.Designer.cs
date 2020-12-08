@@ -45,15 +45,15 @@
             this.buttonSuivant = new System.Windows.Forms.Button();
             this.buttonNew = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.bsInformationVisite = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.labelEchantillon = new System.Windows.Forms.Label();
             this.dateTimePickerRapport = new System.Windows.Forms.DateTimePicker();
+            this.bsInformationVisite = new System.Windows.Forms.BindingSource(this.components);
             this.bsMedecin = new System.Windows.Forms.BindingSource(this.components);
             this.bsVisiteur = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBilan)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsInformationVisite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsInformationVisite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMedecin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).BeginInit();
             this.SuspendLayout();
@@ -164,6 +164,7 @@
             this.buttonDetail.TabIndex = 11;
             this.buttonDetail.Text = "Détails";
             this.buttonDetail.UseVisualStyleBackColor = true;
+            this.buttonDetail.Click += new System.EventHandler(this.ButtonDetail_Click);
             // 
             // dgvBilan
             // 
@@ -271,8 +272,8 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormRapportVisit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBilan)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsInformationVisite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsInformationVisite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMedecin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).EndInit();
             this.ResumeLayout(false);

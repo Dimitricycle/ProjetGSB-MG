@@ -20,20 +20,24 @@ namespace PPE3GSB_MG
 
         private void FormRapportVisit_Load(object sender, EventArgs e)
         {
-            comboBoxPraticien.ValueMember = "idMedecin";
-            comboBoxPraticien.DisplayMember = "prenom";
-            textBoxDateRapport.Text = Convert.ToString(dateTimePickerRapport.Value.Date.ToString("dd/MM/yyyy"));
             bsMedecin.DataSource = Modele.listeMedecin();
             bsVisiteur.DataSource = Modele.listeVisiteur();
             bsInformationVisite.DataSource = Modele.listeRapport();
+
+            //textBoxRapportVisit.Text = ((RAPPORT)bsVisiteur.Current).idRapport.ToString();
+            //textBoxRapportVisit.Text = ((RAPPORT)bsVisiteur.Current).idRapport.ToString();
             comboBoxPraticien.DataSource = bsMedecin;
+            comboBoxPraticien.ValueMember = "idMedecin";
+            comboBoxPraticien.DisplayMember = "nom";
+            textBoxDateRapport.Text = Convert.ToString(dateTimePickerRapport.Value.Date.ToString("dd/MM/yyyy"));
+            
+            
         }
 
         private void BsMedecin_CurrentChanged(object sender, EventArgs e)
         {
-            //if (close) return;
+            if (close) return;
 
-           
             bsInformationVisite.DataSource = ((MEDECIN)bsMedecin.Current).RAPPORT.ToList();
             dgvBilan.DataSource = bsInformationVisite;
 
@@ -49,7 +53,6 @@ namespace PPE3GSB_MG
             dgvBilan.Columns["dateRapport"].HeaderText = "Date";
             dgvBilan.Columns["dateRapport"].DisplayIndex = 1;
 
-            textBoxRapportVisit.Text = ((RAPPORT)bsInformationVisite.Current).idRapport.ToString();
         }
 
         private void DateTimePickerRapport_ValueChanged(object sender, EventArgs e)
@@ -65,5 +68,10 @@ namespace PPE3GSB_MG
             FormRapportVisit.ActiveForm.Close();
         }
 
+        private void ButtonDetail_Click(object sender, EventArgs e)
+        {
+            FormPraticien fp = new FormPraticien();
+            fp.Show();
+        }
     }
 }
