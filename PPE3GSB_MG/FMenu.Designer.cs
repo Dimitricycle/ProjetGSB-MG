@@ -39,6 +39,7 @@
             // 
             // Information
             // 
+            this.Information.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Information.Location = new System.Drawing.Point(322, 146);
             this.Information.Name = "Information";
             this.Information.Size = new System.Drawing.Size(122, 23);
@@ -49,6 +50,7 @@
             // 
             // Responsable
             // 
+            this.Responsable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Responsable.Location = new System.Drawing.Point(322, 175);
             this.Responsable.Name = "Responsable";
             this.Responsable.Size = new System.Drawing.Size(122, 23);
@@ -59,6 +61,7 @@
             // 
             // Budget
             // 
+            this.Budget.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.Budget.Location = new System.Drawing.Point(322, 204);
             this.Budget.Name = "Budget";
             this.Budget.Size = new System.Drawing.Size(122, 23);
@@ -68,15 +71,18 @@
             // 
             // LVisiteur
             // 
+            this.LVisiteur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.LVisiteur.Location = new System.Drawing.Point(322, 233);
             this.LVisiteur.Name = "LVisiteur";
             this.LVisiteur.Size = new System.Drawing.Size(122, 23);
             this.LVisiteur.TabIndex = 5;
             this.LVisiteur.Text = "Liste des visiteurs";
             this.LVisiteur.UseVisualStyleBackColor = true;
+            this.LVisiteur.Click += new System.EventHandler(this.LVisiteur_Click);
             // 
             // RVisite
             // 
+            this.RVisite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.RVisite.Location = new System.Drawing.Point(322, 262);
             this.RVisite.Name = "RVisite";
             this.RVisite.Size = new System.Drawing.Size(122, 23);
@@ -88,20 +94,21 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(204, 73);
+            this.label1.Location = new System.Drawing.Point(318, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(355, 26);
+            this.label1.Size = new System.Drawing.Size(135, 20);
             this.label1.TabIndex = 8;
             this.label1.Text = "Bonjour Dandre";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(704, 415);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 23);
             this.button1.TabIndex = 9;
-            this.button1.Text = "Deconnexion";
+            this.button1.Text = "Quiter";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 

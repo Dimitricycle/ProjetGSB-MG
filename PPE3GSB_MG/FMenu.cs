@@ -53,5 +53,16 @@ namespace PPE3GSB_MG
         {
             this.Close();
         }
+
+        private void LVisiteur_Click(object sender, EventArgs e)
+        {
+            System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(OuvertureListeVisiteur));
+            t.Start();
+            this.Close();
+        }
+        public static void OuvertureListeVisiteur()
+        {
+            Application.Run(new FListeVisiteurR());
+        }
     }
 }

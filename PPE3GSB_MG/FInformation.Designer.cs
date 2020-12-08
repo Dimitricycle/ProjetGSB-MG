@@ -184,7 +184,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 13);
             this.label9.TabIndex = 17;
-            this.label9.Text = "Responsable de ";
+            this.label9.Text = "Lieu de travaille :";
             // 
             // retourMenu
             // 

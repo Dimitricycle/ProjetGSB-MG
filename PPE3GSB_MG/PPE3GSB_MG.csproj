@@ -61,6 +61,12 @@
     <Compile Include="FAMILLE.cs">
       <DependentUpon>GSB.tt</DependentUpon>
     </Compile>
+    <Compile Include="FHierarchique.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FHierarchique.Designer.cs">
+      <DependentUpon>FHierarchique.cs</DependentUpon>
+    </Compile>
     <Compile Include="fichefrais.cs">
       <DependentUpon>GSB.tt</DependentUpon>
     </Compile>
@@ -69,6 +75,18 @@
     </Compile>
     <Compile Include="FInformation.Designer.cs">
       <DependentUpon>FInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FListeVisiteurR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FListeVisiteurR.Designer.cs">
+      <DependentUpon>FListeVisiteurR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FListeVisiteurS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FListeVisiteurS.Designer.cs">
+      <DependentUpon>FListeVisiteurS.cs</DependentUpon>
     </Compile>
     <Compile Include="FMenu.cs">
       <SubType>Form</SubType>
@@ -160,8 +178,17 @@
     <Compile Include="Visiteur.cs">
       <DependentUpon>GSB.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FHierarchique.resx">
+      <DependentUpon>FHierarchique.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FInformation.resx">
       <DependentUpon>FInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FListeVisiteurR.resx">
+      <DependentUpon>FListeVisiteurR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FListeVisiteurS.resx">
+      <DependentUpon>FListeVisiteurS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FMenu.resx">
       <DependentUpon>FMenu.cs</DependentUpon>
