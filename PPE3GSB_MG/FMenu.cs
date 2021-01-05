@@ -22,11 +22,6 @@ namespace PPE3GSB_MG
             label1.Text = "Bonjour " + Modele.GetAffiche().prenom;
         }
 
-        private void RVisite_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Information_Click(object sender, EventArgs e)
         {
             System.Threading.Thread t = new System.Threading.Thread(new System.Threading.ThreadStart(OuvertureInfo));
@@ -63,6 +58,33 @@ namespace PPE3GSB_MG
         public static void OuvertureListeVisiteur()
         {
             Application.Run(new FListeVisiteurR());
+        }
+
+        
+        private void Responsable_VisibleChanged(object sender, EventArgs e)
+        {
+            int droit = 0;
+            foreach (Region r in Modele.listeRegion())
+            {
+                if (r.idVisiteur == Modele.GetAffiche().idVisiteur)
+                {
+                    droit = 1;
+                }
+            }
+
+            foreach (Secteur s in Modele.listeSecteur())
+            {
+                if (s.idVisiteur == Modele.GetAffiche().idVisiteur)
+                {
+                    droit = 1;
+                }
+            }
+
+            if (droit == 0)
+            {
+                Responsable.Visible = false;
+                Budget.Visible = false;
+            }
         }
     }
 }

@@ -32,7 +32,6 @@
             this.Responsable = new System.Windows.Forms.Button();
             this.Budget = new System.Windows.Forms.Button();
             this.LVisiteur = new System.Windows.Forms.Button();
-            this.RVisite = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -51,12 +50,13 @@
             // Responsable
             // 
             this.Responsable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Responsable.Location = new System.Drawing.Point(322, 175);
+            this.Responsable.Location = new System.Drawing.Point(322, 233);
             this.Responsable.Name = "Responsable";
             this.Responsable.Size = new System.Drawing.Size(122, 23);
             this.Responsable.TabIndex = 2;
             this.Responsable.Text = "Resposabilités";
             this.Responsable.UseVisualStyleBackColor = true;
+            this.Responsable.VisibleChanged += new System.EventHandler(this.Responsable_VisibleChanged);
             this.Responsable.Click += new System.EventHandler(this.Responsable_Click);
             // 
             // Budget
@@ -72,24 +72,13 @@
             // LVisiteur
             // 
             this.LVisiteur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.LVisiteur.Location = new System.Drawing.Point(322, 233);
+            this.LVisiteur.Location = new System.Drawing.Point(322, 175);
             this.LVisiteur.Name = "LVisiteur";
             this.LVisiteur.Size = new System.Drawing.Size(122, 23);
             this.LVisiteur.TabIndex = 5;
             this.LVisiteur.Text = "Liste des visiteurs";
             this.LVisiteur.UseVisualStyleBackColor = true;
             this.LVisiteur.Click += new System.EventHandler(this.LVisiteur_Click);
-            // 
-            // RVisite
-            // 
-            this.RVisite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.RVisite.Location = new System.Drawing.Point(322, 262);
-            this.RVisite.Name = "RVisite";
-            this.RVisite.Size = new System.Drawing.Size(122, 23);
-            this.RVisite.TabIndex = 7;
-            this.RVisite.Text = "Rapport visite";
-            this.RVisite.UseVisualStyleBackColor = true;
-            this.RVisite.Click += new System.EventHandler(this.RVisite_Click);
             // 
             // label1
             // 
@@ -98,7 +87,6 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 20);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Bonjour Dandre";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // button1
@@ -108,7 +96,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 23);
             this.button1.TabIndex = 9;
-            this.button1.Text = "Quiter";
+            this.button1.Text = "Quitter";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -120,14 +108,13 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.RVisite);
             this.Controls.Add(this.LVisiteur);
             this.Controls.Add(this.Budget);
             this.Controls.Add(this.Responsable);
             this.Controls.Add(this.Information);
             this.Name = "FMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FMenu";
+            this.Text = "Menu";
             this.Load += new System.EventHandler(this.FMenu_Load);
             this.ResumeLayout(false);
 
@@ -139,7 +126,6 @@
         private System.Windows.Forms.Button Responsable;
         private System.Windows.Forms.Button Budget;
         private System.Windows.Forms.Button LVisiteur;
-        private System.Windows.Forms.Button RVisite;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
     }

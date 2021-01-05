@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dgvListeVisiteur = new System.Windows.Forms.DataGridView();
+            this.cbListeSecteur = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -42,7 +43,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.bsListeSecteur = new System.Windows.Forms.BindingSource(this.components);
+            this.bsVisiteur = new System.Windows.Forms.BindingSource(this.components);
+            this.bsRegion = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListeVisiteur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsListeSecteur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRegion)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -75,21 +82,21 @@
             this.label6.TabIndex = 23;
             this.label6.Text = "Liste par secteur";
             // 
-            // dataGridView1
+            // dgvListeVisiteur
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(48, 97);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(358, 278);
-            this.dataGridView1.TabIndex = 15;
+            this.dgvListeVisiteur.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListeVisiteur.Location = new System.Drawing.Point(48, 97);
+            this.dgvListeVisiteur.Name = "dgvListeVisiteur";
+            this.dgvListeVisiteur.Size = new System.Drawing.Size(358, 278);
+            this.dgvListeVisiteur.TabIndex = 15;
             // 
-            // comboBox1
+            // cbListeSecteur
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(172, 70);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 14;
+            this.cbListeSecteur.FormattingEnabled = true;
+            this.cbListeSecteur.Location = new System.Drawing.Point(172, 70);
+            this.cbListeSecteur.Name = "cbListeSecteur";
+            this.cbListeSecteur.Size = new System.Drawing.Size(121, 21);
+            this.cbListeSecteur.TabIndex = 14;
             // 
             // label1
             // 
@@ -168,6 +175,10 @@
             this.label2.TabIndex = 27;
             this.label2.Text = "Le responsable :";
             // 
+            // bsListeSecteur
+            // 
+            this.bsListeSecteur.CurrentChanged += new System.EventHandler(this.BsListeSecteur_CurrentChanged);
+            // 
             // FListeVisiteurS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,13 +195,17 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dgvListeVisiteur);
+            this.Controls.Add(this.cbListeSecteur);
             this.Controls.Add(this.label1);
             this.Name = "FListeVisiteurS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FListeVisiteurS";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FListeVisiteurS_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListeVisiteur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsListeSecteur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsVisiteur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRegion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,8 +216,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridView dgvListeVisiteur;
+        private System.Windows.Forms.ComboBox cbListeSecteur;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox3;
@@ -212,5 +227,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.BindingSource bsListeSecteur;
+        private System.Windows.Forms.BindingSource bsVisiteur;
+        private System.Windows.Forms.BindingSource bsRegion;
     }
 }

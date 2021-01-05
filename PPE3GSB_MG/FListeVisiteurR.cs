@@ -28,14 +28,42 @@ namespace PPE3GSB_MG
         private void BsListeRegion_CurrentChanged(object sender, EventArgs e)
         {
             if (erreur) return;
-            i = Visiteur.Tolist();
-            bsVisiteur.DataSource = ((Region)bsListeRegion.Current).Visiteur.ToList().OrderBy(x => x.nomVisiteur).ThenBy(x => x.prenomVisiteur);
+            bsVisiteur.DataSource = ((Region)bsListeRegion.Current).Visiteur1.ToList().OrderBy(x => x.nom).ThenBy(x => x.prenom);
             dgvListeVisiteur.DataSource = bsVisiteur;
             for (int i = 0; i < dgvListeVisiteur.ColumnCount; i++)
             {
                 dgvListeVisiteur.Columns[i].Visible = false;
             }
+            dgvListeVisiteur.Columns["idVisiteur"].Visible = true;
+            dgvListeVisiteur.Columns["idVisiteur"].HeaderText = "Identifiant";
+            dgvListeVisiteur.Columns["idVisiteur"].DisplayIndex = 0;
+            dgvListeVisiteur.Columns["nom"].Visible = true;
+            dgvListeVisiteur.Columns["nom"].HeaderText = "Nom";
+            dgvListeVisiteur.Columns["nom"].DisplayIndex = 0;
+            dgvListeVisiteur.Columns["prenom"].Visible = true;
+            dgvListeVisiteur.Columns["prenom"].HeaderText = "Prenom";
+            dgvListeVisiteur.Columns["prenom"].DisplayIndex = 0;
+
+            textBox1.Text = ((Region)bsListeRegion.Current).Visiteur.idVisiteur;
+            textBox2.Text = ((Region)bsListeRegion.Current).Visiteur.nom;
+            textBox3.Text = ((Region)bsListeRegion.Current).Visiteur.prenom;
+
+
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         private void Button1_Click(object sender, EventArgs e)
         {

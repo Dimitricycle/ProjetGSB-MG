@@ -81,11 +81,11 @@
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label1.Location = new System.Drawing.Point(178, 227);
+            this.label1.Location = new System.Drawing.Point(106, 227);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 5;
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button2
             // 
@@ -111,7 +111,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Connexion";
             this.ResumeLayout(false);
             this.PerformLayout();
 

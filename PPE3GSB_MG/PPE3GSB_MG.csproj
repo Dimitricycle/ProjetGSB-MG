@@ -55,11 +55,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDD.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDD.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BDD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDD.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Etat.cs">
-      <DependentUpon>GSB.tt</DependentUpon>
+      <DependentUpon>BDD.tt</DependentUpon>
     </Compile>
     <Compile Include="FAMILLE.cs">
-      <DependentUpon>GSB.tt</DependentUpon>
+      <DependentUpon>BDD.tt</DependentUpon>
     </Compile>
     <Compile Include="FHierarchique.cs">
       <SubType>Form</SubType>
@@ -68,7 +83,7 @@
       <DependentUpon>FHierarchique.cs</DependentUpon>
     </Compile>
     <Compile Include="fichefrais.cs">
-      <DependentUpon>GSB.tt</DependentUpon>
+      <DependentUpon>BDD.tt</DependentUpon>
     </Compile>
     <Compile Include="FInformation.cs">
       <SubType>Form</SubType>
@@ -113,7 +128,7 @@
       <DependentUpon>FormRapportVisit.cs</DependentUpon>
     </Compile>
     <Compile Include="FraisForfait.cs">
-      <DependentUpon>GSB.tt</DependentUpon>
+      <DependentUpon>BDD.tt</DependentUpon>
     </Compile>
     <Compile Include="FResponsabiliter.cs">
       <SubType>Form</SubType>
@@ -121,62 +136,44 @@
     <Compile Include="FResponsabiliter.Designer.cs">
       <DependentUpon>FResponsabiliter.cs</DependentUpon>
     </Compile>
-    <Compile Include="GSB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GSB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GSB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GSB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GSB.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Laboratoire.cs">
-      <DependentUpon>GSB.tt</DependentUpon>
+      <DependentUpon>BDD.tt</DependentUpon>
     </Compile>
     <Compile Include="LigneFraisForfait.cs">
-      <DependentUpon>GSB.tt</DependentUpon>
+      <DependentUpon>BDD.tt</DependentUpon>
     </Compile>
     <Compile Include="LigneFraisHorsForfait.cs">
-      <DependentUpon>GSB.tt</DependentUpon>
+      <DependentUpon>BDD.tt</DependentUpon>
     </Compile>
     <Compile Include="MEDECIN.cs">
-      <DependentUpon>GSB.tt</DependentUpon>
+      <DependentUpon>BDD.tt</DependentUpon>
     </Compile>
     <Compile Include="MEDICAMENT.cs">
-      <DependentUpon>GSB.tt</DependentUpon>
+      <DependentUpon>BDD.tt</DependentUpon>
     </Compile>
     <Compile Include="Modele.cs" />
     <Compile Include="MOTIF.cs">
-      <DependentUpon>GSB.tt</DependentUpon>
+      <DependentUpon>BDD.tt</DependentUpon>
     </Compile>
     <Compile Include="OFFRIR.cs">
-      <DependentUpon>GSB.tt</DependentUpon>
+      <DependentUpon>BDD.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RAPPORT.cs">
-      <DependentUpon>GSB.tt</DependentUpon>
+      <DependentUpon>BDD.tt</DependentUpon>
     </Compile>
     <Compile Include="Region.cs">
-      <DependentUpon>GSB.tt</DependentUpon>
+      <DependentUpon>BDD.tt</DependentUpon>
     </Compile>
     <Compile Include="Secteur.cs">
-      <DependentUpon>GSB.tt</DependentUpon>
+      <DependentUpon>BDD.tt</DependentUpon>
     </Compile>
     <Compile Include="SPECIALITE.cs">
-      <DependentUpon>GSB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>GSB.tt</DependentUpon>
+      <DependentUpon>BDD.tt</DependentUpon>
     </Compile>
     <Compile Include="Visiteur.cs">
-      <DependentUpon>GSB.tt</DependentUpon>
+      <DependentUpon>BDD.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FHierarchique.resx">
       <DependentUpon>FHierarchique.cs</DependentUpon>
@@ -211,12 +208,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="GSB.edmx">
+    <EntityDeploy Include="BDD.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>GSB.Designer.cs</LastGenOutput>
+      <LastGenOutput>BDD.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="GSB.edmx.diagram">
-      <DependentUpon>GSB.edmx</DependentUpon>
+    <None Include="BDD.edmx.diagram">
+      <DependentUpon>BDD.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -233,19 +230,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GSB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>GSB.Context.cs</LastGenOutput>
-      <DependentUpon>GSB.edmx</DependentUpon>
-    </Content>
-    <Content Include="GSB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>GSB.edmx</DependentUpon>
-      <LastGenOutput>GSB.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="BDD.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BDD.edmx</DependentUpon>
+      <LastGenOutput>BDD.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BDD.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BDD.edmx</DependentUpon>
+      <LastGenOutput>BDD.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

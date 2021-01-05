@@ -4,22 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using System.Data.SqlClient;
 
 namespace PPE3GSB_MG
 {
     class Modele
     {
         private static Visiteur uti;
-        private static connectGSB maConnexion;
+        private static PPE3Entities maConnexion;
         private static bool connexionValide;
 
 
-        public static connectGSB MaConnexion { get => maConnexion; set => maConnexion = value; }
+        public static PPE3Entities MaConnexion { get => maConnexion; set => maConnexion = value; }
 
 
         public static void init()
         {
-            MaConnexion = new connectGSB();
+            MaConnexion = new PPE3Entities();
             connexionValide = false;
         }
 
@@ -31,6 +32,12 @@ namespace PPE3GSB_MG
         public static List<Region> listeRegion()
         {
             return MaConnexion.Region.ToList();
+        }
+
+
+        public static List<Secteur> listeSecteur()
+        {
+            return MaConnexion.Secteur.ToList();
         }
 
         public static void Connexion(string id, string mdp)

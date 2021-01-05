@@ -13,10 +13,10 @@ namespace PPE3GSB_MG
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class connectGSB : DbContext
+    public partial class PPE3Entities : DbContext
     {
-        public connectGSB()
-            : base("name=connectGSB")
+        public PPE3Entities()
+            : base("name=PPE3Entities")
         {
         }
     
@@ -40,7 +40,6 @@ namespace PPE3GSB_MG
         public virtual DbSet<Region> Region { get; set; }
         public virtual DbSet<Secteur> Secteur { get; set; }
         public virtual DbSet<SPECIALITE> SPECIALITE { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Visiteur> Visiteur { get; set; }
     }
 }

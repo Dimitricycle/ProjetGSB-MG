@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="mdlGSB.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="PPE3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Etat">
           <Key>
             <PropertyRef Name="id" />
@@ -142,16 +142,6 @@
           <Property Name="idSpecialite" Type="char" MaxLength="3" Nullable="false" />
           <Property Name="libSpecialite" Type="varchar" MaxLength="64" Nullable="false" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="Travailler">
           <Key>
             <PropertyRef Name="idVisiteur" />
@@ -175,7 +165,7 @@
           <Property Name="identifiant" Type="varchar" MaxLength="16" Nullable="false" />
           <Property Name="password" Type="varchar" MaxLength="128" Nullable="false" />
         </EntityType>
-        <Association Name="FK__fichefrai__idEta__2C3393D0">
+        <Association Name="FK__fichefrai__idEta__5165187F">
           <End Role="Etat" Type="Self.Etat" Multiplicity="0..1" />
           <End Role="fichefrais" Type="Self.fichefrais" Multiplicity="*" />
           <ReferentialConstraint>
@@ -187,7 +177,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__fichefrai__idVis__2D27B809">
+        <Association Name="FK__fichefrai__idVis__52593CB8">
           <End Role="Visiteur" Type="Self.Visiteur" Multiplicity="1" />
           <End Role="fichefrais" Type="Self.fichefrais" Multiplicity="*" />
           <ReferentialConstraint>
@@ -199,7 +189,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__LigneFrai__idFra__33D4B598">
+        <Association Name="FK__LigneFrai__idFra__571DF1D5">
           <End Role="FraisForfait" Type="Self.FraisForfait" Multiplicity="1" />
           <End Role="LigneFraisForfait" Type="Self.LigneFraisForfait" Multiplicity="*" />
           <ReferentialConstraint>
@@ -211,7 +201,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__LigneFraisForfai__32E0915F">
+        <Association Name="FK__LigneFraisForfai__5629CD9C">
           <End Role="fichefrais" Type="Self.fichefrais" Multiplicity="1" />
           <End Role="LigneFraisForfait" Type="Self.LigneFraisForfait" Multiplicity="*" />
           <ReferentialConstraint>
@@ -225,7 +215,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__LigneFraisHorsFo__3B75D760">
+        <Association Name="FK__LigneFraisHorsFo__5CD6CB2B">
           <End Role="fichefrais" Type="Self.fichefrais" Multiplicity="1" />
           <End Role="LigneFraisHorsForfait" Type="Self.LigneFraisHorsForfait" Multiplicity="*" />
           <ReferentialConstraint>
@@ -395,7 +385,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="mdlGSBStoreContainer">
+        <EntityContainer Name="PPE3ModelStoreContainer">
           <EntitySet Name="Etat" EntityType="Self.Etat" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FAMILLE" EntityType="Self.FAMILLE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="fichefrais" EntityType="Self.fichefrais" Schema="dbo" store:Type="Tables" />
@@ -411,26 +401,25 @@
           <EntitySet Name="Region" EntityType="Self.Region" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Secteur" EntityType="Self.Secteur" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SPECIALITE" EntityType="Self.SPECIALITE" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Travailler" EntityType="Self.Travailler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Visiteur" EntityType="Self.Visiteur" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__fichefrai__idEta__2C3393D0" Association="Self.FK__fichefrai__idEta__2C3393D0">
+          <AssociationSet Name="FK__fichefrai__idEta__5165187F" Association="Self.FK__fichefrai__idEta__5165187F">
             <End Role="Etat" EntitySet="Etat" />
             <End Role="fichefrais" EntitySet="fichefrais" />
           </AssociationSet>
-          <AssociationSet Name="FK__fichefrai__idVis__2D27B809" Association="Self.FK__fichefrai__idVis__2D27B809">
+          <AssociationSet Name="FK__fichefrai__idVis__52593CB8" Association="Self.FK__fichefrai__idVis__52593CB8">
             <End Role="Visiteur" EntitySet="Visiteur" />
             <End Role="fichefrais" EntitySet="fichefrais" />
           </AssociationSet>
-          <AssociationSet Name="FK__LigneFrai__idFra__33D4B598" Association="Self.FK__LigneFrai__idFra__33D4B598">
+          <AssociationSet Name="FK__LigneFrai__idFra__571DF1D5" Association="Self.FK__LigneFrai__idFra__571DF1D5">
             <End Role="FraisForfait" EntitySet="FraisForfait" />
             <End Role="LigneFraisForfait" EntitySet="LigneFraisForfait" />
           </AssociationSet>
-          <AssociationSet Name="FK__LigneFraisForfai__32E0915F" Association="Self.FK__LigneFraisForfai__32E0915F">
+          <AssociationSet Name="FK__LigneFraisForfai__5629CD9C" Association="Self.FK__LigneFraisForfai__5629CD9C">
             <End Role="fichefrais" EntitySet="fichefrais" />
             <End Role="LigneFraisForfait" EntitySet="LigneFraisForfait" />
           </AssociationSet>
-          <AssociationSet Name="FK__LigneFraisHorsFo__3B75D760" Association="Self.FK__LigneFraisHorsFo__3B75D760">
+          <AssociationSet Name="FK__LigneFraisHorsFo__5CD6CB2B" Association="Self.FK__LigneFraisHorsFo__5CD6CB2B">
             <End Role="fichefrais" EntitySet="fichefrais" />
             <End Role="LigneFraisHorsForfait" EntitySet="LigneFraisHorsForfait" />
           </AssociationSet>
@@ -491,14 +480,14 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="mdlGSB" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="PPE3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Etat">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="libelle" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="fichefrais" Relationship="Self.FK__fichefrai__idEta__2C3393D0" FromRole="Etat" ToRole="fichefrais" />
+          <NavigationProperty Name="fichefrais" Relationship="Self.FK__fichefrai__idEta__5165187F" FromRole="Etat" ToRole="fichefrais" />
         </EntityType>
         <EntityType Name="FAMILLE">
           <Key>
@@ -519,10 +508,10 @@
           <Property Name="montantValide" Type="Decimal" Precision="10" Scale="2" />
           <Property Name="dateModif" Type="DateTime" Precision="0" />
           <Property Name="idEtat" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="Etat" Relationship="Self.FK__fichefrai__idEta__2C3393D0" FromRole="fichefrais" ToRole="Etat" />
-          <NavigationProperty Name="Visiteur" Relationship="Self.FK__fichefrai__idVis__2D27B809" FromRole="fichefrais" ToRole="Visiteur" />
-          <NavigationProperty Name="LigneFraisForfait" Relationship="Self.FK__LigneFraisForfai__32E0915F" FromRole="fichefrais" ToRole="LigneFraisForfait" />
-          <NavigationProperty Name="LigneFraisHorsForfait" Relationship="Self.FK__LigneFraisHorsFo__3B75D760" FromRole="fichefrais" ToRole="LigneFraisHorsForfait" />
+          <NavigationProperty Name="Etat" Relationship="Self.FK__fichefrai__idEta__5165187F" FromRole="fichefrais" ToRole="Etat" />
+          <NavigationProperty Name="Visiteur" Relationship="Self.FK__fichefrai__idVis__52593CB8" FromRole="fichefrais" ToRole="Visiteur" />
+          <NavigationProperty Name="LigneFraisForfait" Relationship="Self.FK__LigneFraisForfai__5629CD9C" FromRole="fichefrais" ToRole="LigneFraisForfait" />
+          <NavigationProperty Name="LigneFraisHorsForfait" Relationship="Self.FK__LigneFraisHorsFo__5CD6CB2B" FromRole="fichefrais" ToRole="LigneFraisHorsForfait" />
         </EntityType>
         <EntityType Name="FraisForfait">
           <Key>
@@ -531,7 +520,7 @@
           <Property Name="id" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="libelle" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
           <Property Name="montant" Type="Decimal" Precision="5" Scale="2" />
-          <NavigationProperty Name="LigneFraisForfait" Relationship="Self.FK__LigneFrai__idFra__33D4B598" FromRole="FraisForfait" ToRole="LigneFraisForfait" />
+          <NavigationProperty Name="LigneFraisForfait" Relationship="Self.FK__LigneFrai__idFra__571DF1D5" FromRole="FraisForfait" ToRole="LigneFraisForfait" />
         </EntityType>
         <EntityType Name="Laboratoire">
           <Key>
@@ -551,8 +540,8 @@
           <Property Name="mois" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="idFraisForfait" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="quantite" Type="Int32" />
-          <NavigationProperty Name="fichefrais" Relationship="Self.FK__LigneFraisForfai__32E0915F" FromRole="LigneFraisForfait" ToRole="fichefrais" />
-          <NavigationProperty Name="FraisForfait" Relationship="Self.FK__LigneFrai__idFra__33D4B598" FromRole="LigneFraisForfait" ToRole="FraisForfait" />
+          <NavigationProperty Name="fichefrais" Relationship="Self.FK__LigneFraisForfai__5629CD9C" FromRole="LigneFraisForfait" ToRole="fichefrais" />
+          <NavigationProperty Name="FraisForfait" Relationship="Self.FK__LigneFrai__idFra__571DF1D5" FromRole="LigneFraisForfait" ToRole="FraisForfait" />
         </EntityType>
         <EntityType Name="LigneFraisHorsForfait">
           <Key>
@@ -564,7 +553,7 @@
           <Property Name="libelle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="date" Type="DateTime" Precision="0" />
           <Property Name="montant" Type="Decimal" Precision="10" Scale="2" />
-          <NavigationProperty Name="fichefrais" Relationship="Self.FK__LigneFraisHorsFo__3B75D760" FromRole="LigneFraisHorsForfait" ToRole="fichefrais" />
+          <NavigationProperty Name="fichefrais" Relationship="Self.FK__LigneFraisHorsFo__5CD6CB2B" FromRole="LigneFraisHorsForfait" ToRole="fichefrais" />
         </EntityType>
         <EntityType Name="MEDECIN">
           <Key>
@@ -657,16 +646,6 @@
           <Property Name="libSpecialite" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="MEDECIN" Relationship="Self.medecin_fk" FromRole="SPECIALITE" ToRole="MEDECIN" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <EntityType Name="Visiteur">
           <Key>
             <PropertyRef Name="idVisiteur" />
@@ -681,14 +660,14 @@
           <Property Name="dateEmbauche" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="identifiant" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="fichefrais" Relationship="Self.FK__fichefrai__idVis__2D27B809" FromRole="Visiteur" ToRole="fichefrais" />
+          <NavigationProperty Name="fichefrais" Relationship="Self.FK__fichefrai__idVis__52593CB8" FromRole="Visiteur" ToRole="fichefrais" />
           <NavigationProperty Name="Laboratoire" Relationship="Self.FK_Laboratoire" FromRole="Visiteur" ToRole="Laboratoire" />
           <NavigationProperty Name="RAPPORT" Relationship="Self.rapport_fk1" FromRole="Visiteur" ToRole="RAPPORT" />
           <NavigationProperty Name="Region" Relationship="Self.FK_VISITEUR" FromRole="Visiteur" ToRole="Region" />
           <NavigationProperty Name="Secteur" Relationship="Self.FK_VISITEURSECTEUR" FromRole="Visiteur" ToRole="Secteur" />
           <NavigationProperty Name="Region1" Relationship="Self.Travailler" FromRole="Visiteur" ToRole="Region" />
         </EntityType>
-        <Association Name="FK__fichefrai__idEta__2C3393D0">
+        <Association Name="FK__fichefrai__idEta__5165187F">
           <End Role="Etat" Type="Self.Etat" Multiplicity="0..1" />
           <End Role="fichefrais" Type="Self.fichefrais" Multiplicity="*" />
           <ReferentialConstraint>
@@ -712,7 +691,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__fichefrai__idVis__2D27B809">
+        <Association Name="FK__fichefrai__idVis__52593CB8">
           <End Role="Visiteur" Type="Self.Visiteur" Multiplicity="1" />
           <End Role="fichefrais" Type="Self.fichefrais" Multiplicity="*" />
           <ReferentialConstraint>
@@ -724,7 +703,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__LigneFraisForfai__32E0915F">
+        <Association Name="FK__LigneFraisForfai__5629CD9C">
           <End Role="fichefrais" Type="Self.fichefrais" Multiplicity="1" />
           <End Role="LigneFraisForfait" Type="Self.LigneFraisForfait" Multiplicity="*" />
           <ReferentialConstraint>
@@ -738,7 +717,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__LigneFraisHorsFo__3B75D760">
+        <Association Name="FK__LigneFraisHorsFo__5CD6CB2B">
           <End Role="fichefrais" Type="Self.fichefrais" Multiplicity="1" />
           <End Role="LigneFraisHorsForfait" Type="Self.LigneFraisHorsForfait" Multiplicity="*" />
           <ReferentialConstraint>
@@ -752,7 +731,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__LigneFrai__idFra__33D4B598">
+        <Association Name="FK__LigneFrai__idFra__571DF1D5">
           <End Role="FraisForfait" Type="Self.FraisForfait" Multiplicity="1" />
           <End Role="LigneFraisForfait" Type="Self.LigneFraisForfait" Multiplicity="*" />
           <ReferentialConstraint>
@@ -888,7 +867,7 @@
           <End Role="Region" Type="Self.Region" Multiplicity="*" />
           <End Role="Visiteur" Type="Self.Visiteur" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="connectGSB" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="PPE3Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Etat" EntityType="Self.Etat" />
           <EntitySet Name="FAMILLE" EntityType="Self.FAMILLE" />
           <EntitySet Name="fichefrais" EntityType="Self.fichefrais" />
@@ -904,9 +883,8 @@
           <EntitySet Name="Region" EntityType="Self.Region" />
           <EntitySet Name="Secteur" EntityType="Self.Secteur" />
           <EntitySet Name="SPECIALITE" EntityType="Self.SPECIALITE" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Visiteur" EntityType="Self.Visiteur" />
-          <AssociationSet Name="FK__fichefrai__idEta__2C3393D0" Association="Self.FK__fichefrai__idEta__2C3393D0">
+          <AssociationSet Name="FK__fichefrai__idEta__5165187F" Association="Self.FK__fichefrai__idEta__5165187F">
             <End Role="Etat" EntitySet="Etat" />
             <End Role="fichefrais" EntitySet="fichefrais" />
           </AssociationSet>
@@ -914,19 +892,19 @@
             <End Role="FAMILLE" EntitySet="FAMILLE" />
             <End Role="MEDICAMENT" EntitySet="MEDICAMENT" />
           </AssociationSet>
-          <AssociationSet Name="FK__fichefrai__idVis__2D27B809" Association="Self.FK__fichefrai__idVis__2D27B809">
+          <AssociationSet Name="FK__fichefrai__idVis__52593CB8" Association="Self.FK__fichefrai__idVis__52593CB8">
             <End Role="Visiteur" EntitySet="Visiteur" />
             <End Role="fichefrais" EntitySet="fichefrais" />
           </AssociationSet>
-          <AssociationSet Name="FK__LigneFraisForfai__32E0915F" Association="Self.FK__LigneFraisForfai__32E0915F">
+          <AssociationSet Name="FK__LigneFraisForfai__5629CD9C" Association="Self.FK__LigneFraisForfai__5629CD9C">
             <End Role="fichefrais" EntitySet="fichefrais" />
             <End Role="LigneFraisForfait" EntitySet="LigneFraisForfait" />
           </AssociationSet>
-          <AssociationSet Name="FK__LigneFraisHorsFo__3B75D760" Association="Self.FK__LigneFraisHorsFo__3B75D760">
+          <AssociationSet Name="FK__LigneFraisHorsFo__5CD6CB2B" Association="Self.FK__LigneFraisHorsFo__5CD6CB2B">
             <End Role="fichefrais" EntitySet="fichefrais" />
             <End Role="LigneFraisHorsForfait" EntitySet="LigneFraisHorsForfait" />
           </AssociationSet>
-          <AssociationSet Name="FK__LigneFrai__idFra__33D4B598" Association="Self.FK__LigneFrai__idFra__33D4B598">
+          <AssociationSet Name="FK__LigneFrai__idFra__571DF1D5" Association="Self.FK__LigneFrai__idFra__571DF1D5">
             <End Role="FraisForfait" EntitySet="FraisForfait" />
             <End Role="LigneFraisForfait" EntitySet="LigneFraisForfait" />
           </AssociationSet>
@@ -980,9 +958,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="mdlGSBStoreContainer" CdmEntityContainer="connectGSB">
+        <EntityContainerMapping StorageEntityContainer="PPE3ModelStoreContainer" CdmEntityContainer="PPE3Entities">
           <EntitySetMapping Name="Etat">
-            <EntityTypeMapping TypeName="mdlGSB.Etat">
+            <EntityTypeMapping TypeName="PPE3Model.Etat">
               <MappingFragment StoreEntitySet="Etat">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="libelle" ColumnName="libelle" />
@@ -990,7 +968,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FAMILLE">
-            <EntityTypeMapping TypeName="mdlGSB.FAMILLE">
+            <EntityTypeMapping TypeName="PPE3Model.FAMILLE">
               <MappingFragment StoreEntitySet="FAMILLE">
                 <ScalarProperty Name="idFamille" ColumnName="idFamille" />
                 <ScalarProperty Name="libFamille" ColumnName="libFamille" />
@@ -998,7 +976,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="fichefrais">
-            <EntityTypeMapping TypeName="mdlGSB.fichefrais">
+            <EntityTypeMapping TypeName="PPE3Model.fichefrais">
               <MappingFragment StoreEntitySet="fichefrais">
                 <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
                 <ScalarProperty Name="mois" ColumnName="mois" />
@@ -1010,7 +988,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="FraisForfait">
-            <EntityTypeMapping TypeName="mdlGSB.FraisForfait">
+            <EntityTypeMapping TypeName="PPE3Model.FraisForfait">
               <MappingFragment StoreEntitySet="FraisForfait">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="libelle" ColumnName="libelle" />
@@ -1019,7 +997,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Laboratoire">
-            <EntityTypeMapping TypeName="mdlGSB.Laboratoire">
+            <EntityTypeMapping TypeName="PPE3Model.Laboratoire">
               <MappingFragment StoreEntitySet="Laboratoire">
                 <ScalarProperty Name="idLabo" ColumnName="idLabo" />
                 <ScalarProperty Name="nomLabo" ColumnName="nomLabo" />
@@ -1027,7 +1005,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LigneFraisForfait">
-            <EntityTypeMapping TypeName="mdlGSB.LigneFraisForfait">
+            <EntityTypeMapping TypeName="PPE3Model.LigneFraisForfait">
               <MappingFragment StoreEntitySet="LigneFraisForfait">
                 <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
                 <ScalarProperty Name="mois" ColumnName="mois" />
@@ -1037,7 +1015,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="LigneFraisHorsForfait">
-            <EntityTypeMapping TypeName="mdlGSB.LigneFraisHorsForfait">
+            <EntityTypeMapping TypeName="PPE3Model.LigneFraisHorsForfait">
               <MappingFragment StoreEntitySet="LigneFraisHorsForfait">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
@@ -1049,7 +1027,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MEDECIN">
-            <EntityTypeMapping TypeName="mdlGSB.MEDECIN">
+            <EntityTypeMapping TypeName="PPE3Model.MEDECIN">
               <MappingFragment StoreEntitySet="MEDECIN">
                 <ScalarProperty Name="idMedecin" ColumnName="idMedecin" />
                 <ScalarProperty Name="nom" ColumnName="nom" />
@@ -1062,7 +1040,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MEDICAMENT">
-            <EntityTypeMapping TypeName="mdlGSB.MEDICAMENT">
+            <EntityTypeMapping TypeName="PPE3Model.MEDICAMENT">
               <MappingFragment StoreEntitySet="MEDICAMENT">
                 <ScalarProperty Name="idMedicament" ColumnName="idMedicament" />
                 <ScalarProperty Name="nomCommercial" ColumnName="nomCommercial" />
@@ -1074,7 +1052,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="MOTIF">
-            <EntityTypeMapping TypeName="mdlGSB.MOTIF">
+            <EntityTypeMapping TypeName="PPE3Model.MOTIF">
               <MappingFragment StoreEntitySet="MOTIF">
                 <ScalarProperty Name="idMotif" ColumnName="idMotif" />
                 <ScalarProperty Name="libMotif" ColumnName="libMotif" />
@@ -1082,7 +1060,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OFFRIR">
-            <EntityTypeMapping TypeName="mdlGSB.OFFRIR">
+            <EntityTypeMapping TypeName="PPE3Model.OFFRIR">
               <MappingFragment StoreEntitySet="OFFRIR">
                 <ScalarProperty Name="idRapport" ColumnName="idRapport" />
                 <ScalarProperty Name="idMedicament" ColumnName="idMedicament" />
@@ -1091,7 +1069,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RAPPORT">
-            <EntityTypeMapping TypeName="mdlGSB.RAPPORT">
+            <EntityTypeMapping TypeName="PPE3Model.RAPPORT">
               <MappingFragment StoreEntitySet="RAPPORT">
                 <ScalarProperty Name="idRapport" ColumnName="idRapport" />
                 <ScalarProperty Name="dateRapport" ColumnName="dateRapport" />
@@ -1103,7 +1081,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Region">
-            <EntityTypeMapping TypeName="mdlGSB.Region">
+            <EntityTypeMapping TypeName="PPE3Model.Region">
               <MappingFragment StoreEntitySet="Region">
                 <ScalarProperty Name="idRegion" ColumnName="idRegion" />
                 <ScalarProperty Name="libRegion" ColumnName="libRegion" />
@@ -1113,7 +1091,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Secteur">
-            <EntityTypeMapping TypeName="mdlGSB.Secteur">
+            <EntityTypeMapping TypeName="PPE3Model.Secteur">
               <MappingFragment StoreEntitySet="Secteur">
                 <ScalarProperty Name="idSecteur" ColumnName="idSecteur" />
                 <ScalarProperty Name="libSecteur" ColumnName="libSecteur" />
@@ -1122,26 +1100,15 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SPECIALITE">
-            <EntityTypeMapping TypeName="mdlGSB.SPECIALITE">
+            <EntityTypeMapping TypeName="PPE3Model.SPECIALITE">
               <MappingFragment StoreEntitySet="SPECIALITE">
                 <ScalarProperty Name="idSpecialite" ColumnName="idSpecialite" />
                 <ScalarProperty Name="libSpecialite" ColumnName="libSpecialite" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="mdlGSB.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Visiteur">
-            <EntityTypeMapping TypeName="mdlGSB.Visiteur">
+            <EntityTypeMapping TypeName="PPE3Model.Visiteur">
               <MappingFragment StoreEntitySet="Visiteur">
                 <ScalarProperty Name="idVisiteur" ColumnName="idVisiteur" />
                 <ScalarProperty Name="idLabo" ColumnName="idLabo" />
@@ -1156,7 +1123,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="Travailler" TypeName="mdlGSB.Travailler" StoreEntitySet="Travailler">
+          <AssociationSetMapping Name="Travailler" TypeName="PPE3Model.Travailler" StoreEntitySet="Travailler">
             <EndProperty Name="Region">
               <ScalarProperty Name="idRegion" ColumnName="idRegion" />
             </EndProperty>
